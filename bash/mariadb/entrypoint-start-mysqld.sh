@@ -13,4 +13,5 @@ groupmod -o -g $TARGET_GID mysql || true
 echo
 echo '* Starting MySQL'
 chown -R mysql:root /var/run/mysqld/
+chmod a-w /etc/mysql/conf.d/my.cnf
 /docker-entrypoint.sh mysqld --user=mysql --console
